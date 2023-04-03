@@ -1,0 +1,23 @@
+{% extends "nav.html" %}
+
+{% set active_page = "home" %}
+
+{% block title %}Home{% endblock %}
+
+{% block heading %}<h1 class = "bg-light">About the SAT Scores Data</h1>{% endblock %}
+
+{% block body %}
+    <br>
+    <div class = "row">
+        <div class = "col-3">.</div>
+        <div class = "col-6">
+            <h3>    The data set being used in this web app is from the CORGIS Dataset Project, linked <a href = "https://think.cs.vt.edu/corgis/json/school_scores/" target = "blank">here</a>. This data contains statistics 
+            regarding SAT Scores across America between 2005-2015, this includes statistics regarding scores in both the Math and Verbal sections, scores associated with GPA, familial income, and gender, as well as the 
+            amount of years studied and the average GPA of different school subjects.</h3>
+            <h3>    As mentioned previously, this data includes the average score of both sections of the SAT Exam, giving more detailed statistics as to what group of individuals scored on a specific portion of the test. When 
+            viewing the scores as seperated between the two sections, the score will be in a range of 200-800 instead of the normal 400-1600 score range you would usually see with the SAT Exam. This is because for each half 
+            section, you can only score up to 800, as that is half of the total SAT Exam score.</h3>
+        </div>
+        <div class = "col-3">.</div>
+    </div>
+{% endblock %}

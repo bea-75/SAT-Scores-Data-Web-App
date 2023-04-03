@@ -1,0 +1,42 @@
+{% extends "demographics.html" %}
+
+{% block graph %}
+    <h2>{{ state }} Demographics</h2>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        axisX: {
+            title: "Year"
+        },
+        axisY: {
+            title: "Average SAT Score",
+        },
+        legend:{
+            cursor: "pointer",
+            fontSize: 16,
+        },
+        toolTip:{
+            shared: true
+        },
+        data: [{
+            type: "spline",
+            name: "Math",
+            showInLegend: true,
+            dataPoints: {{ mathpoints }}
+        },
+        {
+            type: "spline",
+            name: "Verbal",
+            showInLegend: true,
+            dataPoints: {{ verbpoints }}
+		}]
+        
+        });
+        chart.render();
+		});	
+    </script>
+{% endblock %}

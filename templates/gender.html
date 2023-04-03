@@ -1,0 +1,32 @@
+{% extends "nav.html" %}
+
+{% set active_page = "sat-gender" %}
+
+{% block title %}Gender and the SAT{% endblock %}
+
+{% block heading %}Gender and the SAT{% endblock %}
+
+{% block body %}
+    <div class = "row">
+        <div class = "col-2 text-light"></div>
+        <div class = "col-8"> 
+            <form action = "/sat-gender">
+                <label for="state" class="form-label">State:</label>
+                <select class="form-select" name="state">
+					{{ options1 }}
+				</select>
+                <br>
+                <label for="year" class="form-label">Year:</label>
+                <select class="form-select" name="year">
+					{{ options2 }}
+				</select>
+                <br>
+                <input type="submit" class="btn btn-dark" value="Submit">
+                <br>
+                <p class = "text-light">.</p>
+                {% block graph %}{% endblock %}
+            <form>
+        </div>
+        <div class = "col-2 text-light"></div>
+    </div>
+{% endblock %}

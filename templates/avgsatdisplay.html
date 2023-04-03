@@ -1,0 +1,13 @@
+{% extends "average_sat.html" %}
+
+{% block answer %}
+{{ super() }}
+
+<h2>Average SAT Scores in {{ state }}</h2>
+<br>
+<p>Year: {{ year }}</p>
+<p>GPA: {{ gpa }}
+<p>SAT Score: {{ total }}</p>
+<p>Math Score: {{ math }}</p>
+<p>Verbal Score: {{ verb }}</p>
+{% endblock %}

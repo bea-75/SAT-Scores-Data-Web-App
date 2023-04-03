@@ -1,0 +1,47 @@
+{% extends "nav.html" %}
+
+{% set active_page = "sat-demo" %}
+
+{% block title %}State Demographics{% endblock %}
+
+{% block heading %}State SAT Score Demographics{% endblock %}
+
+{% block body %}
+    <div class = "row">
+        <div class = "col-2 text-light"></div>
+        <div class = "col-8"> 
+            <form action = "/sat-demo">
+                <label for="choice" class="form-label ">Choose what topic you would like to see data for:</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input overtime" id="overtime" name="choice" value="overtime">State SAT Scores between 2005-2015
+                        <label class="form-check-label overtime" for="yes"></label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input range" id="range" name="choice" value="range">State SAT Score Ranges in specified year
+                        <label class="form-check-label range" for="range"></label>
+					</div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input country" id="country" name="choice" value="country">All State SAT Scores in specified year
+                        <label class="form-check-label country" for="country"></label>
+					</div>
+                <br>
+                <label for="state" class="form-label state">State:</label>
+                <select class="form-select state" name="state">
+					{{ options1 }}
+				</select>
+                <br class = "state">
+                <label for="year" class="form-label year">Year:</label>
+                <select class="form-select year" name="year">
+					{{ options2 }}
+				</select>
+                <br class = "year">
+                <input type="submit" class="btn btn-dark" value="Submit">
+                <br>
+                <p class = "text-light">.</p>
+                {% block graph %}{% endblock %}
+            <form>
+        </div>
+        <div class = "col-2 text-light"></div>
+    </div>
+{% endblock %}
+    
